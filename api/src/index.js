@@ -9,7 +9,8 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use('/stronge/capaFilmes', express.static('stronge/capaFilmes'))
+//liberar arquivos de storage
+server.use('/storage/capasFilmes', express.static('storage/capasFilmes'));
 
 //endpoints
 server.use(usuarioController);
