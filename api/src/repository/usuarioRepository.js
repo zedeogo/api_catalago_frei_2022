@@ -6,8 +6,8 @@ export async function login(email, senha) {
                nm_usuario		nome,
                ds_email			email
           from tb_usuario
-         where ds_email 		= '${email}'
-           and ds_senha			= '${senha}'
+         where ds_email 		= ?
+           and ds_senha			= ?
     `
     const [lines] = await connection.query(command, [email, senha]);
     return lines[0] 
